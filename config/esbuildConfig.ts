@@ -3,8 +3,8 @@ export const esbuildConfig = {
   bundle: true,
   minify: false,
   sourcemap: true,
-  exclude: ['aws-sdk'],
-  target: 'node14',
+  exclude: [],
+  target: 'node18',
   platform: 'node',
   mainFields: ['module', 'main'],
 };

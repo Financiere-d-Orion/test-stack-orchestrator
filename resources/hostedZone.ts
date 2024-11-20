@@ -1,6 +1,6 @@
 import { ref } from '../configHelpers';
 
-export const domainNameName = 'stack-orchestrator.theodo.org';
+export const domainNameName = 'stack-orchestrator.orion-canopia.fr';
 
 export const ApiHostedZone = {
   Type: 'AWS::Route53::HostedZone',

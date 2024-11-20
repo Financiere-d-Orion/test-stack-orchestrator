@@ -4,7 +4,6 @@ An easy way to manage the availability of multiple serverless stacks.
 
 ## Use case
 
-
 This API helps to implement integration or e2e testing per feature branch.
 It enables to request a stack for a specific branch, deploy the app on this stack, test on it, then release the stack for the next feature branch.
 
@@ -44,11 +43,11 @@ type Stacks = {
   stackName: string; // ex: "test-1"
   lastDeployedCommit: string;
   isAvailable: boolean;
-  branch: string;    // ex: "main"
-  created: string;   // iso date, ex "2022-03-04T14:19:54.448Z"
-  modified: string;  // iso date, ex "2022-03-04T14:19:54.448Z"
+  branch: string; // ex: "main"
+  created: string; // iso date, ex "2022-03-04T14:19:54.448Z"
+  modified: string; // iso date, ex "2022-03-04T14:19:54.448Z"
   entity: 'Stack';
-}[]
+}[];
 ```
 
 ### Delete last stack
@@ -57,11 +56,6 @@ Remove the last stack of the list of stacks.
 The deleted stack will no more be returned by `requestStack` if another stack is available.
 If no stack is available, the stack will be recreated by the `requestStack`.
 
-
 ## Authentication
 
 This API uses `X-API-Key` header to authenticate. It should contain a valid project key.
-
-## Project configuration
-
-To use this API, ask for access at <corentind@theodo.fr>. The only configurable attribute is the `prefix` of the stack names. The default is `test-`.

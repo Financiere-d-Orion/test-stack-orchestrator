@@ -8,7 +8,11 @@ import { DEFAULT_STACK_PREFIX, success, throwIfNil } from '@libs/utils';
 import { projectKeyAuthorizer } from '@libs/utils/http/projectKeyAuthorizer';
 
 const defaultBranch = 'main';
-const requestStack: CustomAPIGatewayProxyHandler<typeof requestStackInputSchema, unknown> = async ({
+const requestStack: CustomAPIGatewayProxyHandler<
+  typeof requestStackInputSchema,
+  // @ts-expect-error types are wrong
+  unknown
+> = async ({
   body: { branch = defaultBranch } = { branch: defaultBranch },
   headers: { 'x-api-key': projectKey },
 }: {

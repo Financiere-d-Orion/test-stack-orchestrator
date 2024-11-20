@@ -9,6 +9,7 @@ import { releaseStackInputSchema } from './input.schema';
 
 const deleteLastStack: CustomAPIGatewayProxyHandler<
   typeof releaseStackInputSchema,
+  // @ts-expect-error types are wrong
   unknown
 > = async ({ headers: { 'x-api-key': projectKey } }: { headers: { 'x-api-key': string } }) => {
   await projectKeyAuthorizer(projectKey);

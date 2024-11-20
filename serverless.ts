@@ -13,10 +13,10 @@ const serverlessConfiguration: AWS = {
   plugins: ['serverless-esbuild'],
   provider: {
     name: 'aws',
-    runtime: 'nodejs14.x',
+    runtime: 'nodejs18.x',
     architecture: 'arm64',
     region,
-    profile: 'test-stack-orchestrator',
+    profile: 'canopia-test',
     stage: `\${opt:stage, '${AppEnv.Dev}'}`, // Doc: https://www.serverless.com/framework/docs/providers/aws/guide/credentials/
     lambdaHashingVersion: '20201221',
     environment: {

@@ -8,6 +8,7 @@ import { setLastDeployedCommitInputSchema } from './input.schema';
 
 const setLastDeployedCommit: CustomAPIGatewayProxyHandler<
   typeof setLastDeployedCommitInputSchema,
+  // @ts-expect-error types are wrong
   unknown
 > = async ({
   body: { stackName, lastDeployedCommit },

@@ -8,11 +8,11 @@ import type { CustomAPIGatewayProxyHandler } from '@libs/utils';
 import { sortStacks, success, throwIfNil } from '@libs/utils';
 import { projectKeyAuthorizer } from '@libs/utils/http/projectKeyAuthorizer';
 
-const listStacks: CustomAPIGatewayProxyHandler<typeof listStacksInputSchema, unknown> = async ({
-  headers: { 'x-api-key': projectKey },
-}: {
-  headers: { 'x-api-key': string };
-}) => {
+const listStacks: CustomAPIGatewayProxyHandler<
+  typeof listStacksInputSchema,
+  // @ts-expect-error types are wrong
+  unknown
+> = async ({ headers: { 'x-api-key': projectKey } }: { headers: { 'x-api-key': string } }) => {
   await projectKeyAuthorizer(projectKey);
 
   const { Items: stacks } = await Stack.query(Stack.name, { beginsWith: projectKey });

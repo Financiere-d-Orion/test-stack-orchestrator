@@ -21,11 +21,9 @@ Before to complete all of the following steps:
   ```
 
 - Install [`zsh-nvm`](https://github.com/lukechilds/zsh-nvm), with [auto-use enabled](https://github.com/lukechilds/zsh-nvm#auto-use)
-- Have a dev account dedicated to Canopia on the Theodo AWS organization. You should be able to log in through the [Theodo AWS SSO portal](https://theodo.awsapps.com/start#/)
 
 ## Getting started 🚀
 
-- Clone the repo: `git clone git@github.com:theodo/canopia.git`
 - Run `yarn` at the root of the repo
 - Create your developer user on the [IAM console](https://console.aws.amazon.com/iam/home?region=eu-west-1#/home):
   - Go to **Users**

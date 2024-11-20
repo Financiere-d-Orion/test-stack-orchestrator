@@ -6,7 +6,11 @@ import { projectKeyAuthorizer } from '@libs/utils/http/projectKeyAuthorizer';
 
 import { releaseStackInputSchema } from './input.schema';
 
-const releaseStack: CustomAPIGatewayProxyHandler<typeof releaseStackInputSchema, unknown> = async ({
+const releaseStack: CustomAPIGatewayProxyHandler<
+  typeof releaseStackInputSchema,
+  // @ts-expect-error types are wrong
+  unknown
+> = async ({
   body: { stackName },
   headers: { 'x-api-key': projectKey },
 }: {
